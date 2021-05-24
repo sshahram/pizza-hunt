@@ -28,6 +28,13 @@ const pizzaController = {
                 res.status(400).json(err);
             });
     },
+
+    // create pizza
+    createPizza({body}, res) {
+        Pizza.create(body)
+            .then(dbPizzaData => res.json(dbPizzaData))
+            .catch(err => res.status(400).json(err));
+    },
 };
 
 module.exports = pizzaController;
