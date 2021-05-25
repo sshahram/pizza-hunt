@@ -52,6 +52,11 @@ const CommentSchema = new Schema(
     }
 );
 
+// get reply count
+CommentSchema.virtual('replyCount').get(function() {
+    return this.replies.length;
+});
+
 const Comment = model('Comment', CommentSchema);
 
 module.exports = Comment;
