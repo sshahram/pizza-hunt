@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const{addComment, removeComment, addReply, removeReply} = require('../../controllers/comment-controller');
-const { remove } = require('../../models/Pizza');
+const{addComment, 
+    removeComment, 
+    addReply, 
+    removeReply} = require('../../controllers/comment-controller');
 
 // route to add comment `/api/comments/<pizzaId>`
 router.route('/:pizzaId').post(addComment);
-
-// route to delete comment `/api/comments/<pizzaId>/<commentId>`
-router.route('/:pizzaId/:commentId').delete(removeComment);
 
 // route to handle addNewReply() `/api/comments/:pizzaId/:commentId`
 router
